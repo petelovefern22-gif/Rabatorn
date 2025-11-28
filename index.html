@@ -3,431 +3,739 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ประวัติการรักษา โรงพยาบาลเปาโล โชคชัย 4</title>
-
-  <!-- ฟอนต์สวยแบบโรงพยาบาล -->
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>ประวัติการรักษา - โรงพยาบาลเปาโล โชคชัย 4</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Sarabun", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Sarabun', sans-serif;
-      background: #f9fafb; /* ขาวเทา พรีเมียม */
-      color: #1f2937;
+      background: #e5edf5;
+      color: #1f2933;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* หัวข้อหลัก */
+    /* Header */
     .header {
-      text-align: center;
-      padding: 30px 10px;
+      background: linear-gradient(120deg, #0f172a, #1d4ed8);
+      color: white;
+      padding: 18px 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.45);
+    }
+
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
       background: white;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1d4ed8;
+      font-weight: 800;
+      font-size: 1.1rem;
     }
 
-    .header h1 {
-      font-size: 2rem;
+    .header-title {
+      flex: 1;
+    }
+
+    .header-title h1 {
       margin: 0;
-      color: #0d47a1; /* น้ำเงินแพทย์ */
-      font-weight: 600;
+      font-size: 1.6rem;
+      letter-spacing: 0.02em;
     }
 
-    .header p {
-      font-size: 1rem;
-      margin: 5px 0 0;
-      color: #6b7280;
+    .header-title .sub {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 4px;
     }
 
-    /* Card สไตล์โรงพยาบาลเอกชน */
+    /* Layout */
+    .container {
+      max-width: 1080px;
+      margin: 18px auto 32px;
+      padding: 0 12px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 840px) {
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .card {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      margin-bottom: 20px;
+      background: #f9fafb;
+      border-radius: 18px;
+      padding: 18px 16px 16px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.13);
+      border: 1px solid #d0d7e2;
     }
 
-    .card h2 {
-      margin-top: 0;
-      font-weight: 600;
-      color: #0d47a1;
-      font-size: 1.3rem;
-      border-left: 6px solid #0d47a1;
-      padding-left: 12px;
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card-header h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #0f172a;
+      border-left: 4px solid #2563eb;
+      padding-left: 8px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #e0ecff;
+      color: #1d4ed8;
+      white-space: nowrap;
     }
 
     label {
-      font-weight: 500;
       display: block;
+      font-size: 0.8rem;
       margin-bottom: 4px;
-      color: #374151;
+      color: #4b5563;
     }
 
-    input, textarea, select {
+    input,
+    select,
+    textarea {
       width: 100%;
-      padding: 10px 12px;
-      border-radius: 10px;
+      padding: 8px 11px;
+      border-radius: 12px;
       border: 1px solid #cbd5e1;
       background: #ffffff;
-      font-size: 1rem;
-      transition: 0.2s;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
     }
 
-    input:focus, textarea:focus, select:focus {
-      border-color: #0d47a1;
-      outline: none;
-      box-shadow: 0 0 5px rgba(13,71,161,0.2);
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
     }
 
     textarea {
+      min-height: 60px;
       resize: vertical;
-      min-height: 70px;
     }
 
-    .two-col {
+    .field-row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
     }
 
-    @media (max-width: 600px) {
-      .two-col { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .field-row {
+        grid-template-columns: 1fr;
+      }
     }
 
-    button {
-      padding: 10px 18px;
-      border-radius: 12px;
+    .muted {
+      font-size: 0.78rem;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .age-display {
+      font-size: 0.85rem;
+      color: #1f2933;
+      font-weight: 500;
+      padding: 6px 0;
+    }
+
+    /* Buttons */
+    .btn-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
       border: none;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.86rem;
       cursor: pointer;
-      font-size: 1rem;
       font-weight: 600;
-      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.12s;
     }
 
-    button.primary {
-      background: #0d47a1;
-      color: white;
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 9px 22px rgba(37, 99, 235, 0.45);
+      opacity: 0.96;
     }
 
-    button.primary:hover { background: #0a3a85; }
-
-    button.secondary {
-      background: #e5e7eb;
-      color: #374151;
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      opacity: 0.9;
     }
 
-    button.danger {
-      background: #ef4444;
-      color: white;
+    .btn.outline {
+      background: #ffffff;
+      color: #1f2933;
+      border: 1px solid #cbd5e1;
+      box-shadow: none;
+    }
+
+    .btn.danger {
+      background: #dc2626;
+      box-shadow: 0 6px 15px rgba(220, 38, 38, 0.35);
+    }
+
+    .btn.secondary {
+      background: #0f172a;
+      box-shadow: 0 6px 15px rgba(15, 23, 42, 0.35);
+    }
+
+    /* Table */
+    .card-table {
+      margin-top: 18px;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid #d0d7e2;
+      background: #ffffff;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
-      font-size: 0.95rem;
+      font-size: 0.82rem;
+      min-width: 780px;
     }
 
-    th, td {
-      padding: 10px;
+    th,
+    td {
+      padding: 9px 10px;
       border-bottom: 1px solid #e5e7eb;
       vertical-align: top;
     }
 
     th {
       background: #f1f5f9;
-      color: #0d47a1;
+      color: #111827;
       font-weight: 600;
+      text-align: left;
+      white-space: nowrap;
     }
 
-    .empty {
-      padding: 20px;
+    tr:nth-child(even) td {
+      background: #f9fafb;
+    }
+
+    .text-muted {
+      color: #9ca3af;
+    }
+
+    .pill-dept {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e0ecff;
+      color: #1d4ed8;
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+
+    .empty-state {
+      margin-top: 10px;
+      padding: 10px;
       text-align: center;
-      background: #f1f5f9;
-      border-radius: 10px;
-      color: #64748b;
-      font-size: 0.95rem;
+      font-size: 0.84rem;
+      color: #6b7280;
+      border-radius: 12px;
+      border: 1px dashed #cbd5e1;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .note-small {
+      font-size: 0.72rem;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    /* Print */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .header {
+        box-shadow: none;
+      }
+      .container {
+        margin-top: 8px;
+      }
+      .card {
+        box-shadow: none;
+        border-radius: 10px;
+      }
+      .btn,
+      .btn-row {
+        display: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-
-    <!-- HEADER -->
-    <div class="header">
-      <h1>ประวัติการรักษา</h1>
-      <p>โรงพยาบาลเปาโล โชคชัย 4</p>
-    </div>
-
-    <!-- ข้อมูลผู้ป่วย -->
-    <div class="card">
-      <h2>ข้อมูลผู้ป่วย</h2>
-      <div class="two-col">
-        <div>
-          <label>ชื่อ - นามสกุล</label>
-          <input id="patientName" placeholder="เช่น นายสมชาย ใจดี">
-        </div>
-        <div>
-          <label>เลขที่ HN / บัตรประชาชน</label>
-          <input id="patientId" placeholder="เช่น HN-001">
-        </div>
-        <div>
-          <label>วันเกิด</label>
-          <input type="date" id="patientDob">
-        </div>
-        <div>
-          <label>เบอร์ติดต่อ</label>
-          <input id="patientPhone" placeholder="เช่น 08x-xxx-xxxx">
-        </div>
-        <div>
-          <label>โรคประจำตัว</label>
-          <input id="patientChronic">
-        </div>
-        <div>
-          <label>ประวัติแพ้ยา</label>
-          <input id="patientAllergy">
-        </div>
-      </div>
-
-      <label style="margin-top:10px;">หมายเหตุเพิ่มเติม</label>
-      <textarea id="patientNote"></textarea>
-
-      <div style="margin-top:12px;">
-        <button class="primary" onclick="savePatientProfile()">บันทึกข้อมูลผู้ป่วย</button>
-        <button class="secondary" onclick="resetPatientProfile()">ล้างฟอร์ม</button>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-box">P</div>
+      <div class="header-title">
+        <h1>ประวัติการรักษา</h1>
+        <div class="sub">โรงพยาบาลเปาโล โชคชัย 4 • ระบบบันทึกข้อมูลส่วนบุคคล (ไม่ใช่เวชระเบียนทางการ)</div>
       </div>
     </div>
+  </header>
 
-    <!-- เพิ่มประวัติ -->
-    <div class="card">
-      <h2>เพิ่มประวัติการรักษา</h2>
+  <main class="container">
+    <div class="grid-two">
+      <!-- PATIENT CARD -->
+      <section class="card">
+        <div class="card-header">
+          <h2>ข้อมูลผู้ป่วย</h2>
+          <span class="badge" id="hnBadge">HN: -</span>
+        </div>
 
-      <form id="recordForm">
-        <div class="two-col">
+        <div class="field-row">
+          <div>
+            <label>เลขที่ HN *</label>
+            <input id="patientHN" placeholder="เช่น HN-0001" />
+          </div>
+          <div>
+            <label>เลขบัตรประชาชน / Passport</label>
+            <input id="patientCID" />
+          </div>
+        </div>
+
+        <label style="margin-top:10px;">ชื่อ - นามสกุล *</label>
+        <input id="patientName" placeholder="เช่น นายธนาธร แก้วพาดี" />
+
+        <div class="field-row" style="margin-top:10px;">
+          <div>
+            <label>วันเดือนปีเกิด</label>
+            <input type="date" id="patientDOB" />
+            <div class="age-display" id="ageDisplay">อายุ: - ปี</div>
+          </div>
+          <div>
+            <label>เบอร์โทรติดต่อ</label>
+            <input id="patientPhone" placeholder="เช่น 08x-xxx-xxxx" />
+          </div>
+        </div>
+
+        <div class="field-row" style="margin-top:10px;">
+          <div>
+            <label>โรคประจำตัว</label>
+            <input id="patientChronic" placeholder="เช่น เบาหวาน, ความดันโลหิตสูง" />
+          </div>
+          <div>
+            <label>ประวัติแพ้ยา</label>
+            <input id="patientAllergy" placeholder="เช่น แพ้ Penicillin" />
+          </div>
+        </div>
+
+        <label style="margin-top:10px;">หมายเหตุเพิ่มเติม</label>
+        <textarea id="patientNote" placeholder="เช่น ยาที่ใช้ประจำ, ข้อควรระวังอื่น ๆ"></textarea>
+
+        <div class="btn-row">
+          <button class="btn secondary" onclick="saveProfile()">บันทึกข้อมูลผู้ป่วย</button>
+          <button class="btn outline" onclick="resetProfileForm()">ล้างฟอร์ม</button>
+        </div>
+        <div class="note-small">
+          ข้อมูลผู้ป่วยจะถูกเก็บไว้ในอุปกรณ์นี้เท่านั้น (localStorage) ไม่ถูกส่งไปที่เซิร์ฟเวอร์โรงพยาบาลจริง
+        </div>
+      </section>
+
+      <!-- NEW VISIT FORM -->
+      <section class="card">
+        <div class="card-header">
+          <h2>บันทึกการมารับการรักษา (Visit)</h2>
+          <span class="badge" id="visitCountBadge">0 ครั้ง</span>
+        </div>
+
+        <div class="field-row">
           <div>
             <label>วันที่เข้ารับการรักษา *</label>
-            <input type="date" id="visitDate" required>
+            <input type="date" id="visitDate" />
           </div>
           <div>
-            <label>สถานพยาบาล *</label>
-            <input id="clinic" value="โรงพยาบาลเปาโล โชคชัย 4" required>
+            <label>เวลา (ประมาณ)</label>
+            <input type="time" id="visitTime" />
+          </div>
+        </div>
+
+        <div class="field-row" style="margin-top:10px;">
+          <div>
+            <label>แผนก / ห้องตรวจ</label>
+            <input id="visitDept" placeholder="เช่น อายุรกรรม, ER, OPD 3" />
           </div>
           <div>
-            <label>อาการ / การวินิจฉัย *</label>
-            <input id="diagnosis" required>
-          </div>
-          <div>
-            <label>ประเภทการรักษา</label>
-            <select id="treatmentType">
-              <option value="">เลือกประเภท</option>
-              <option>OPD</option>
-              <option>IPD</option>
-              <option>ฉุกเฉิน</option>
+            <label>สถานะ Visit</label>
+            <select id="visitType">
+              <option value="">- เลือก -</option>
+              <option value="OPD">OPD (ผู้ป่วยนอก)</option>
+              <option value="IPD">IPD (ผู้ป่วยใน)</option>
+              <option value="ER">ER (ฉุกเฉิน)</option>
+              <option value="Follow-up">Follow-up (ติดตามอาการ)</option>
             </select>
           </div>
+        </div>
+
+        <label style="margin-top:10px;">อาการสำคัญ (Chief Complaint) *</label>
+        <input id="visitCC" placeholder="เช่น ไข้สูง 2 วัน, ปวดศีรษะมาก, แน่นหน้าอก" />
+
+        <label style="margin-top:10px;">การวินิจฉัยโรค (Diagnosis / Dx)</label>
+        <input id="visitDx" placeholder="เช่น Influenza, UTI, Hypertension" />
+
+        <label style="margin-top:10px;">การรักษา / หัตถการ / แผนการรักษา</label>
+        <textarea id="visitPlan" placeholder="ยาที่ให้, การทำหัตถการ, คำแนะนำการดูแลที่บ้าน ฯลฯ"></textarea>
+
+        <div class="field-row" style="margin-top:10px;">
           <div>
-            <label>แพทย์ผู้ดูแล</label>
-            <input id="doctor">
+            <label>แพทย์ผู้รักษา</label>
+            <input id="visitDoctor" placeholder="เช่น นพ.ธนาธร แก้วพาดี" />
           </div>
           <div>
-            <label>ยาที่ได้รับ</label>
-            <input id="medications">
+            <label>นัดครั้งต่อไป (ถ้ามี)</label>
+            <input type="date" id="visitNext" />
           </div>
         </div>
 
-        <label style="margin-top:10px;">รายละเอียดเพิ่มเติม</label>
-        <textarea id="notes"></textarea>
+        <label style="margin-top:10px;">หมายเหตุอื่น ๆ</label>
+        <textarea id="visitNote"></textarea>
 
-        <div style="margin-top:12px;">
-          <button type="submit" class="primary">เพิ่มประวัติ</button>
-          <button type="button" class="secondary" onclick="recordForm.reset()">ล้างฟอร์ม</button>
+        <div class="btn-row">
+          <button class="btn" onclick="addVisit()">บันทึก Visit</button>
+          <button class="btn outline" onclick="clearVisitForm()">ล้างฟอร์ม Visit</button>
         </div>
-      </form>
+      </section>
     </div>
 
-    <!-- ตารางประวัติ -->
-    <div class="card">
-      <h2>รายการประวัติการรักษา</h2>
-
-      <div id="recordsEmpty" class="empty" style="display:none;">ยังไม่มีประวัติการรักษา</div>
-
-      <table>
-        <thead>
-          <tr>
-            <th>วันที่</th>
-            <th>สถานพยาบาล</th>
-            <th>อาการ / การวินิจฉัย</th>
-            <th>แพทย์ / ยา</th>
-            <th>หมายเหตุ</th>
-            <th>ลบ</th>
-          </tr>
-        </thead>
-        <tbody id="recordsTable"></tbody>
-      </table>
-
-      <div style="margin-top:12px;">
-        <button class="secondary" onclick="exportData()">ดาวน์โหลดข้อมูล (.json)</button>
-        <button class="danger" onclick="clearAllRecords()">ลบทั้งหมด</button>
+    <!-- VISIT TABLE -->
+    <section class="card card-table" style="margin-top:20px;">
+      <div class="card-header">
+        <h2>สรุปรายการมารับการรักษา</h2>
+        <span class="badge" id="printHintBadge">พร้อมสำหรับพิมพ์</span>
       </div>
-    </div>
 
-  </div>
+      <div class="table-wrap">
+        <table id="visitTable">
+          <thead>
+            <tr>
+              <th>วันที่ / เวลา</th>
+              <th>แผนก / ประเภท</th>
+              <th>อาการสำคัญ (CC)</th>
+              <th>Dx / แผนการรักษา</th>
+              <th>แพทย์ / นัดครั้งต่อไป</th>
+              <th>หมายเหตุ</th>
+              <th>จัดการ</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
 
-<script>
-  const STORAGE_KEY_RECORDS = "med_history_records_v1";
-  const STORAGE_KEY_PROFILE = "med_history_patient_profile_v1";
+      <div id="emptyState" class="empty-state" style="display:none;">
+        ยังไม่มีข้อมูลการมารับการรักษาในระบบ
+      </div>
 
-  const recordsTableBody = document.getElementById("recordsTable");
-  const recordsEmpty = document.getElementById("recordsEmpty");
-  const recordForm = document.getElementById("recordForm");
+      <div class="btn-row">
+        <button class="btn secondary" onclick="window.print()">พิมพ์สรุปประวัติ</button>
+        <button class="btn danger" onclick="clearAllVisits()">ลบ Visit ทั้งหมด</button>
+      </div>
 
-  let records = [];
+      <div class="note-small">
+        ข้อมูลทั้งหมดนี้เป็นเพียงการบันทึกส่วนบุคคลของผู้ใช้ระบบ ไม่ถือเป็นเวชระเบียนจริงของโรงพยาบาล
+      </div>
+    </section>
+  </main>
 
-  window.addEventListener("DOMContentLoaded", () => {
-    loadPatientProfile();
-    loadRecords();
-  });
+  <script>
+    const PROFILE_KEY = "paolo_emr_profile_v1";
+    const VISIT_KEY = "paolo_emr_visits_v1";
 
+    let visits = [];
 
-  /* -------------------- Patient Profile -------------------- */
-  function loadPatientProfile() {
-    const raw = localStorage.getItem(STORAGE_KEY_PROFILE);
-    if (!raw) return;
-    const p = JSON.parse(raw);
+    const patientHN = document.getElementById("patientHN");
+    const patientCID = document.getElementById("patientCID");
+    const patientName = document.getElementById("patientName");
+    const patientDOB = document.getElementById("patientDOB");
+    const patientPhone = document.getElementById("patientPhone");
+    const patientChronic = document.getElementById("patientChronic");
+    const patientAllergy = document.getElementById("patientAllergy");
+    const patientNote = document.getElementById("patientNote");
+    const ageDisplay = document.getElementById("ageDisplay");
+    const hnBadge = document.getElementById("hnBadge");
 
-    patientName.value = p.name || "";
-    patientId.value = p.id || "";
-    patientDob.value = p.dob || "";
-    patientPhone.value = p.phone || "";
-    patientChronic.value = p.chronic || "";
-    patientAllergy.value = p.allergy || "";
-    patientNote.value = p.note || "";
-  }
+    const visitDate = document.getElementById("visitDate");
+    const visitTime = document.getElementById("visitTime");
+    const visitDept = document.getElementById("visitDept");
+    const visitType = document.getElementById("visitType");
+    const visitCC = document.getElementById("visitCC");
+    const visitDx = document.getElementById("visitDx");
+    const visitPlan = document.getElementById("visitPlan");
+    const visitDoctor = document.getElementById("visitDoctor");
+    const visitNext = document.getElementById("visitNext");
+    const visitNote = document.getElementById("visitNote");
 
-  function savePatientProfile() {
-    const profile = {
-      name: patientName.value.trim(),
-      id: patientId.value.trim(),
-      dob: patientDob.value,
-      phone: patientPhone.value.trim(),
-      chronic: patientChronic.value.trim(),
-      allergy: patientAllergy.value.trim(),
-      note: patientNote.value.trim(),
-    };
-    localStorage.setItem(STORAGE_KEY_PROFILE, JSON.stringify(profile));
-    alert("บันทึกข้อมูลผู้ป่วยเรียบร้อย");
-  }
+    const visitTableBody = document.querySelector("#visitTable tbody");
+    const visitCountBadge = document.getElementById("visitCountBadge");
+    const emptyState = document.getElementById("emptyState");
 
-  function resetPatientProfile() {
-    if (!confirm("ต้องการล้างฟอร์มหรือไม่?")) return;
-    patientName.value = "";
-    patientId.value = "";
-    patientDob.value = "";
-    patientPhone.value = "";
-    patientChronic.value = "";
-    patientAllergy.value = "";
-    patientNote.value = "";
-  }
+    // Init
+    window.addEventListener("DOMContentLoaded", () => {
+      loadProfile();
+      loadVisits();
+    });
 
+    // PROFILE
+    function saveProfile() {
+      const profile = {
+        hn: patientHN.value.trim(),
+        cid: patientCID.value.trim(),
+        name: patientName.value.trim(),
+        dob: patientDOB.value,
+        phone: patientPhone.value.trim(),
+        chronic: patientChronic.value.trim(),
+        allergy: patientAllergy.value.trim(),
+        note: patientNote.value.trim(),
+      };
 
-  /* -------------------- Records -------------------- */
-  function loadRecords() {
-    const raw = localStorage.getItem(STORAGE_KEY_RECORDS);
-    records = raw ? JSON.parse(raw) : [];
-    renderRecords();
-  }
+      if (!profile.hn || !profile.name) {
+        alert("กรุณากรอก HN และชื่อ-นามสกุล");
+        return;
+      }
 
-  function saveRecords() {
-    localStorage.setItem(STORAGE_KEY_RECORDS, JSON.stringify(records));
-  }
-
-  function renderRecords() {
-    recordsTableBody.innerHTML = "";
-
-    if (!records.length) {
-      recordsEmpty.style.display = "block";
-      return;
+      localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+      hnBadge.textContent = `HN: ${profile.hn || "-"}`;
+      updateAgeDisplay();
+      alert("บันทึกข้อมูลผู้ป่วยเรียบร้อย");
     }
 
-    recordsEmpty.style.display = "none";
+    function loadProfile() {
+      const raw = localStorage.getItem(PROFILE_KEY);
+      if (!raw) return;
+      try {
+        const p = JSON.parse(raw);
+        patientHN.value = p.hn || "";
+        patientCID.value = p.cid || "";
+        patientName.value = p.name || "";
+        patientDOB.value = p.dob || "";
+        patientPhone.value = p.phone || "";
+        patientChronic.value = p.chronic || "";
+        patientAllergy.value = p.allergy || "";
+        patientNote.value = p.note || "";
+        hnBadge.textContent = `HN: ${p.hn || "-"}`;
+        updateAgeDisplay();
+      } catch (e) {
+        console.error("load profile error", e);
+      }
+    }
 
-    records.forEach((rec) => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${rec.visitDate || "-"}</td>
-        <td>${rec.clinic || "-"}</td>
-        <td>${rec.diagnosis || "-"}</td>
-        <td>
-          ${rec.doctor || "-"}<br>
-          <span style="color:#64748b;">${rec.medications || ""}</span>
-        </td>
-        <td>${rec.notes || "-"}</td>
-        <td><button class="danger" style="padding:5px 10px;" onclick="deleteRecord('${rec.id}')">ลบ</button></td>
-      `;
-      recordsTableBody.appendChild(tr);
-    });
-  }
+    function resetProfileForm() {
+      if (!confirm("ต้องการล้างฟอร์มข้อมูลผู้ป่วยที่กรอกอยู่หรือไม่?")) return;
+      patientHN.value = "";
+      patientCID.value = "";
+      patientName.value = "";
+      patientDOB.value = "";
+      patientPhone.value = "";
+      patientChronic.value = "";
+      patientAllergy.value = "";
+      patientNote.value = "";
+      ageDisplay.textContent = "อายุ: - ปี";
+      hnBadge.textContent = "HN: -";
+    }
 
-  function deleteRecord(id) {
-    if (!confirm("ลบรายการนี้หรือไม่?")) return;
-    records = records.filter((r) => r.id !== id);
-    saveRecords();
-    renderRecords();
-  }
+    patientDOB.addEventListener("change", updateAgeDisplay);
 
-  function clearAllRecords() {
-    if (!confirm("ลบประวัติทั้งหมดถาวร?")) return;
-    records = [];
-    saveRecords();
-    renderRecords();
-  }
+    function updateAgeDisplay() {
+      if (!patientDOB.value) {
+        ageDisplay.textContent = "อายุ: - ปี";
+        return;
+      }
+      const birth = new Date(patientDOB.value);
+      if (Number.isNaN(birth.getTime())) {
+        ageDisplay.textContent = "อายุ: - ปี";
+        return;
+      }
+      const today = new Date();
+      let age = today.getFullYear() - birth.getFullYear();
+      const m = today.getMonth() - birth.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        age--;
+      }
+      ageDisplay.textContent = `อายุ: ${age} ปี`;
+    }
 
-  recordForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+    // VISIT
+    function addVisit() {
+      const v = {
+        id: Date.now().toString(),
+        date: visitDate.value,
+        time: visitTime.value,
+        dept: visitDept.value.trim(),
+        type: visitType.value,
+        cc: visitCC.value.trim(),
+        dx: visitDx.value.trim(),
+        plan: visitPlan.value.trim(),
+        doctor: visitDoctor.value.trim(),
+        next: visitNext.value,
+        note: visitNote.value.trim(),
+      };
 
-    const newRecord = {
-      id: Date.now().toString(),
-      visitDate: visitDate.value,
-      clinic: clinic.value.trim(),
-      diagnosis: diagnosis.value.trim(),
-      treatmentType: treatmentType.value,
-      doctor: doctor.value.trim(),
-      medications: medications.value.trim(),
-      notes: notes.value.trim(),
-    };
+      if (!v.date || !v.cc) {
+        alert("กรุณากรอก วันที่เข้ารับการรักษา และอาการสำคัญ (CC)");
+        return;
+      }
 
-    records.push(newRecord);
-    saveRecords();
-    renderRecords();
-    recordForm.reset();
-  });
+      visits.push(v);
+      saveVisits();
+      renderVisits();
+      clearVisitForm();
+    }
 
-  /* -------------------- Export -------------------- */
-  function exportData() {
-    const payload = {
-      profile: JSON.parse(localStorage.getItem(STORAGE_KEY_PROFILE) || "{}"),
-      records,
-      exportedAt: new Date().toISOString(),
-    };
+    function clearVisitForm() {
+      visitDate.value = "";
+      visitTime.value = "";
+      visitDept.value = "";
+      visitType.value = "";
+      visitCC.value = "";
+      visitDx.value = "";
+      visitPlan.value = "";
+      visitDoctor.value = "";
+      visitNext.value = "";
+      visitNote.value = "";
+    }
 
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "medical_history_paolo.json";
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-</script>
+    function saveVisits() {
+      localStorage.setItem(VISIT_KEY, JSON.stringify(visits));
+    }
 
-</body>
-  </html>
+    function loadVisits() {
+      const raw = localStorage.getItem(VISIT_KEY);
+      visits = raw ? JSON.parse(raw) : [];
+      renderVisits();
+    }
+
+    function renderVisits() {
+      visitTableBody.innerHTML = "";
+
+      if (!visits.length) {
+        emptyState.style.display = "block";
+        visitCountBadge.textContent = "0 ครั้ง";
+        return;
+      }
+      emptyState.style.display = "none";
+      visitCountBadge.textContent = `${visits.length} ครั้ง`;
+
+      const sorted = visits
+        .slice()
+        .sort((a, b) => (a.date < b.date ? 1 : -1));
+
+      sorted.forEach((v) => {
+        const tr = document.createElement("tr");
+
+        const dateTime = document.createElement("td");
+        dateTime.innerHTML =
+          (v.date || "-") +
+          (v.time ? `<div class="text-muted">${v.time}</div>` : "");
+        tr.appendChild(dateTime);
+
+        const dept = document.createElement("td");
+        dept.innerHTML =
+          (v.dept || "-") +
+          (v.type
+            ? `<div class="pill-dept">${escapeHtml(v.type)}</div>`
+            : "");
+        tr.appendChild(dept);
+
+        const cc = document.createElement("td");
+        cc.textContent = v.cc || "-";
+        tr.appendChild(cc);
+
+        const dxPlan = document.createElement("td");
+        dxPlan.innerHTML = `${
+          v.dx ? `<strong>Dx:</strong> ${escapeHtml(v.dx)}<br />` : ""
+        }${v.plan ? escapeHtml(v.plan) : ""}`;
+        tr.appendChild(dxPlan);
+
+        const doc = document.createElement("td");
+        doc.innerHTML =
+          (v.doctor ? escapeHtml(v.doctor) : "-") +
+          (v.next
+            ? `<div class="text-muted">นัด: ${escapeHtml(v.next)}</div>`
+            : "");
+        tr.appendChild(doc);
+
+        const note = document.createElement("td");
+        note.textContent = v.note || "-";
+        tr.appendChild(note);
+
+        const actions = document.createElement("td");
+        const delBtn = document.createElement("button");
+        delBtn.className = "btn danger";
+        delBtn.style.padding = "4px 10px";
+        delBtn.style.fontSize = "0.75rem";
+        delBtn.textContent = "ลบ";
+        delBtn.onclick = () => deleteVisit(v.id);
+        actions.appendChild(delBtn);
+        tr.appendChild(actions);
+
+        visitTableBody.appendChild(tr);
+      });
+    }
+
+    function deleteVisit(id) {
+      if (!confirm("ต้องการลบรายการ Visit นี้หรือไม่?")) return;
+      visits = visits.filter((v) => v.id !== id);
+      saveVisits();
+      renderVisits();
+    }
+
+    function clearAllVisits() {
+      if (!visits.length) {
+        alert("ยังไม
