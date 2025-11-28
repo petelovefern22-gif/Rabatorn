@@ -3,328 +3,431 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ประวัติการรักษา - โรงพยาบาลเปาโล โชคชัย 4</title>
+  <title>ประวัติการรักษา โรงพยาบาลเปาโล โชคชัย 4</title>
+
+  <!-- ฟอนต์สวยแบบโรงพยาบาล -->
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      background: #fafafa;
-      font-family: "Sarabun", sans-serif;
-      color: #333;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb);
-      color: white;
-      padding: 24px 16px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 1.9rem;
-      font-weight: 700;
-    }
-
-    .sub {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-top: 4px;
+      padding: 0;
+      font-family: 'Sarabun', sans-serif;
+      background: #f9fafb; /* ขาวเทา พรีเมียม */
+      color: #1f2937;
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 20px;
     }
 
-    .card {
+    /* หัวข้อหลัก */
+    .header {
+      text-align: center;
+      padding: 30px 10px;
       background: white;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #0d47a1; /* น้ำเงินแพทย์ */
+      font-weight: 600;
+    }
+
+    .header p {
+      font-size: 1rem;
+      margin: 5px 0 0;
+      color: #6b7280;
+    }
+
+    /* Card สไตล์โรงพยาบาลเอกชน */
+    .card {
+      background: #ffffff;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.06);
-      margin-top: 20px;
-      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
     }
 
-    h2 {
+    .card h2 {
+      margin-top: 0;
+      font-weight: 600;
+      color: #0d47a1;
       font-size: 1.3rem;
-      margin-bottom: 16px;
-      color: #1e3a8a;
-      border-left: 5px solid #2563eb;
-      padding-left: 10px;
+      border-left: 6px solid #0d47a1;
+      padding-left: 12px;
     }
 
     label {
-      display: block;
-      margin-bottom: 6px;
       font-weight: 500;
-      color: #444;
+      display: block;
+      margin-bottom: 4px;
+      color: #374151;
     }
 
-    input, select, textarea {
+    input, textarea, select {
       width: 100%;
-      padding: 10px;
-      border-radius: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
       border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      font-size: 0.95rem;
+      background: #ffffff;
+      font-size: 1rem;
       transition: 0.2s;
     }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: #2563eb;
-      background: #fff;
+    input:focus, textarea:focus, select:focus {
+      border-color: #0d47a1;
       outline: none;
-      box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+      box-shadow: 0 0 5px rgba(13,71,161,0.2);
     }
 
     textarea {
-      min-height: 60px;
       resize: vertical;
+      min-height: 70px;
     }
 
-    .btn {
-      background: #2563eb;
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    button {
+      padding: 10px 18px;
+      border-radius: 12px;
       border: none;
-      padding: 10px 16px;
-      color: white;
-      border-radius: 999px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: 600;
       transition: 0.2s;
     }
 
-    .btn:hover {
-      background: #1e3a8a;
+    button.primary {
+      background: #0d47a1;
+      color: white;
+    }
+
+    button.primary:hover { background: #0a3a85; }
+
+    button.secondary {
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    button.danger {
+      background: #ef4444;
+      color: white;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 0.9rem;
+      margin-top: 15px;
+      font-size: 0.95rem;
     }
 
     th, td {
-      padding: 12px 8px;
+      padding: 10px;
       border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
     }
 
     th {
       background: #f1f5f9;
-      color: #1e3a8a;
+      color: #0d47a1;
       font-weight: 600;
     }
 
     .empty {
+      padding: 20px;
       text-align: center;
-      padding: 14px;
-      color: #666;
-      font-size: 0.9rem;
-      border: 1px dashed #cbd5e1;
-      border-radius: 12px;
-      margin-top: 12px;
+      background: #f1f5f9;
+      border-radius: 10px;
+      color: #64748b;
+      font-size: 0.95rem;
     }
-
-    .danger {
-      background: #dc2626 !important;
-    }
-
-    .wrap {
-      margin-top: 15px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
   </style>
 </head>
 
 <body>
-
-  <!-- Header -->
-  <div class="header">
-    <h1>ประวัติการรักษา</h1>
-    <div class="sub">โรงพยาบาลเปาโล โชคชัย 4</div>
-  </div>
-
   <div class="container">
 
-    <!-- Patient Info -->
+    <!-- HEADER -->
+    <div class="header">
+      <h1>ประวัติการรักษา</h1>
+      <p>โรงพยาบาลเปาโล โชคชัย 4</p>
+    </div>
+
+    <!-- ข้อมูลผู้ป่วย -->
     <div class="card">
       <h2>ข้อมูลผู้ป่วย</h2>
+      <div class="two-col">
+        <div>
+          <label>ชื่อ - นามสกุล</label>
+          <input id="patientName" placeholder="เช่น นายสมชาย ใจดี">
+        </div>
+        <div>
+          <label>เลขที่ HN / บัตรประชาชน</label>
+          <input id="patientId" placeholder="เช่น HN-001">
+        </div>
+        <div>
+          <label>วันเกิด</label>
+          <input type="date" id="patientDob">
+        </div>
+        <div>
+          <label>เบอร์ติดต่อ</label>
+          <input id="patientPhone" placeholder="เช่น 08x-xxx-xxxx">
+        </div>
+        <div>
+          <label>โรคประจำตัว</label>
+          <input id="patientChronic">
+        </div>
+        <div>
+          <label>ประวัติแพ้ยา</label>
+          <input id="patientAllergy">
+        </div>
+      </div>
 
-      <label>ชื่อ - นามสกุล</label>
-      <input id="patientName" placeholder="เช่น นายสมชาย ใจดี">
+      <label style="margin-top:10px;">หมายเหตุเพิ่มเติม</label>
+      <textarea id="patientNote"></textarea>
 
-      <label style="margin-top:10px;">รหัสผู้ป่วย / เลขที่บัตร</label>
-      <input id="patientId">
-
-      <label style="margin-top:10px;">เบอร์โทร</label>
-      <input id="patientPhone">
-
-      <label style="margin-top:10px;">ประวัติแพ้ยา</label>
-      <input id="patientAllergy" placeholder="เช่น แพ้เพนิซิลลิน">
-
-      <div class="wrap">
-        <button class="btn" onclick="saveProfile()">บันทึกข้อมูลผู้ป่วย</button>
+      <div style="margin-top:12px;">
+        <button class="primary" onclick="savePatientProfile()">บันทึกข้อมูลผู้ป่วย</button>
+        <button class="secondary" onclick="resetPatientProfile()">ล้างฟอร์ม</button>
       </div>
     </div>
 
-    <!-- Add Record -->
+    <!-- เพิ่มประวัติ -->
     <div class="card">
       <h2>เพิ่มประวัติการรักษา</h2>
 
-      <label>วันที่รับการรักษา</label>
-      <input type="date" id="visitDate">
+      <form id="recordForm">
+        <div class="two-col">
+          <div>
+            <label>วันที่เข้ารับการรักษา *</label>
+            <input type="date" id="visitDate" required>
+          </div>
+          <div>
+            <label>สถานพยาบาล *</label>
+            <input id="clinic" value="โรงพยาบาลเปาโล โชคชัย 4" required>
+          </div>
+          <div>
+            <label>อาการ / การวินิจฉัย *</label>
+            <input id="diagnosis" required>
+          </div>
+          <div>
+            <label>ประเภทการรักษา</label>
+            <select id="treatmentType">
+              <option value="">เลือกประเภท</option>
+              <option>OPD</option>
+              <option>IPD</option>
+              <option>ฉุกเฉิน</option>
+            </select>
+          </div>
+          <div>
+            <label>แพทย์ผู้ดูแล</label>
+            <input id="doctor">
+          </div>
+          <div>
+            <label>ยาที่ได้รับ</label>
+            <input id="medications">
+          </div>
+        </div>
 
-      <label style="margin-top:10px;">การวินิจฉัยโรค / อาการ</label>
-      <input id="diagnosis">
+        <label style="margin-top:10px;">รายละเอียดเพิ่มเติม</label>
+        <textarea id="notes"></textarea>
 
-      <label style="margin-top:10px;">แพทย์ผู้รักษา</label>
-      <input id="doctor">
-
-      <label style="margin-top:10px;">ยาที่ได้รับ</label>
-      <input id="medications">
-
-      <label style="margin-top:10px;">หมายเหตุ</label>
-      <textarea id="notes"></textarea>
-
-      <div class="wrap">
-        <button class="btn" onclick="addRecord()">เพิ่มประวัติ</button>
-      </div>
+        <div style="margin-top:12px;">
+          <button type="submit" class="primary">เพิ่มประวัติ</button>
+          <button type="button" class="secondary" onclick="recordForm.reset()">ล้างฟอร์ม</button>
+        </div>
+      </form>
     </div>
 
-    <!-- Table -->
+    <!-- ตารางประวัติ -->
     <div class="card">
       <h2>รายการประวัติการรักษา</h2>
-      <div id="empty" class="empty" style="display:none;">ยังไม่มีข้อมูล</div>
 
-      <table id="recordsTable">
+      <div id="recordsEmpty" class="empty" style="display:none;">ยังไม่มีประวัติการรักษา</div>
+
+      <table>
         <thead>
           <tr>
             <th>วันที่</th>
-            <th>การวินิจฉัย</th>
-            <th>แพทย์</th>
-            <th>ยา</th>
+            <th>สถานพยาบาล</th>
+            <th>อาการ / การวินิจฉัย</th>
+            <th>แพทย์ / ยา</th>
             <th>หมายเหตุ</th>
             <th>ลบ</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody id="recordsTable"></tbody>
       </table>
 
-      <div class="wrap">
-        <button class="btn danger" onclick="clearAll()">ลบทั้งหมด</button>
+      <div style="margin-top:12px;">
+        <button class="secondary" onclick="exportData()">ดาวน์โหลดข้อมูล (.json)</button>
+        <button class="danger" onclick="clearAllRecords()">ลบทั้งหมด</button>
       </div>
-
     </div>
+
   </div>
 
-  <script>
-    const KEY = "paolo_records_v1";
-    const PROFILE_KEY = "paolo_profile_v1";
-    let records = [];
+<script>
+  const STORAGE_KEY_RECORDS = "med_history_records_v1";
+  const STORAGE_KEY_PROFILE = "med_history_patient_profile_v1";
 
-    // Load data
-    window.onload = () => {
-      loadProfile();
-      loadRecords();
+  const recordsTableBody = document.getElementById("recordsTable");
+  const recordsEmpty = document.getElementById("recordsEmpty");
+  const recordForm = document.getElementById("recordForm");
+
+  let records = [];
+
+  window.addEventListener("DOMContentLoaded", () => {
+    loadPatientProfile();
+    loadRecords();
+  });
+
+
+  /* -------------------- Patient Profile -------------------- */
+  function loadPatientProfile() {
+    const raw = localStorage.getItem(STORAGE_KEY_PROFILE);
+    if (!raw) return;
+    const p = JSON.parse(raw);
+
+    patientName.value = p.name || "";
+    patientId.value = p.id || "";
+    patientDob.value = p.dob || "";
+    patientPhone.value = p.phone || "";
+    patientChronic.value = p.chronic || "";
+    patientAllergy.value = p.allergy || "";
+    patientNote.value = p.note || "";
+  }
+
+  function savePatientProfile() {
+    const profile = {
+      name: patientName.value.trim(),
+      id: patientId.value.trim(),
+      dob: patientDob.value,
+      phone: patientPhone.value.trim(),
+      chronic: patientChronic.value.trim(),
+      allergy: patientAllergy.value.trim(),
+      note: patientNote.value.trim(),
+    };
+    localStorage.setItem(STORAGE_KEY_PROFILE, JSON.stringify(profile));
+    alert("บันทึกข้อมูลผู้ป่วยเรียบร้อย");
+  }
+
+  function resetPatientProfile() {
+    if (!confirm("ต้องการล้างฟอร์มหรือไม่?")) return;
+    patientName.value = "";
+    patientId.value = "";
+    patientDob.value = "";
+    patientPhone.value = "";
+    patientChronic.value = "";
+    patientAllergy.value = "";
+    patientNote.value = "";
+  }
+
+
+  /* -------------------- Records -------------------- */
+  function loadRecords() {
+    const raw = localStorage.getItem(STORAGE_KEY_RECORDS);
+    records = raw ? JSON.parse(raw) : [];
+    renderRecords();
+  }
+
+  function saveRecords() {
+    localStorage.setItem(STORAGE_KEY_RECORDS, JSON.stringify(records));
+  }
+
+  function renderRecords() {
+    recordsTableBody.innerHTML = "";
+
+    if (!records.length) {
+      recordsEmpty.style.display = "block";
+      return;
+    }
+
+    recordsEmpty.style.display = "none";
+
+    records.forEach((rec) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${rec.visitDate || "-"}</td>
+        <td>${rec.clinic || "-"}</td>
+        <td>${rec.diagnosis || "-"}</td>
+        <td>
+          ${rec.doctor || "-"}<br>
+          <span style="color:#64748b;">${rec.medications || ""}</span>
+        </td>
+        <td>${rec.notes || "-"}</td>
+        <td><button class="danger" style="padding:5px 10px;" onclick="deleteRecord('${rec.id}')">ลบ</button></td>
+      `;
+      recordsTableBody.appendChild(tr);
+    });
+  }
+
+  function deleteRecord(id) {
+    if (!confirm("ลบรายการนี้หรือไม่?")) return;
+    records = records.filter((r) => r.id !== id);
+    saveRecords();
+    renderRecords();
+  }
+
+  function clearAllRecords() {
+    if (!confirm("ลบประวัติทั้งหมดถาวร?")) return;
+    records = [];
+    saveRecords();
+    renderRecords();
+  }
+
+  recordForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const newRecord = {
+      id: Date.now().toString(),
+      visitDate: visitDate.value,
+      clinic: clinic.value.trim(),
+      diagnosis: diagnosis.value.trim(),
+      treatmentType: treatmentType.value,
+      doctor: doctor.value.trim(),
+      medications: medications.value.trim(),
+      notes: notes.value.trim(),
     };
 
-    function saveProfile() {
-      const data = {
-        name: patientName.value.trim(),
-        id: patientId.value.trim(),
-        phone: patientPhone.value.trim(),
-        allergy: patientAllergy.value.trim()
-      };
-      localStorage.setItem(PROFILE_KEY, JSON.stringify(data));
-      alert("บันทึกข้อมูลผู้ป่วยแล้ว");
-    }
+    records.push(newRecord);
+    saveRecords();
+    renderRecords();
+    recordForm.reset();
+  });
 
-    function loadProfile() {
-      const raw = localStorage.getItem(PROFILE_KEY);
-      if (!raw) return;
-      const p = JSON.parse(raw);
-      patientName.value = p.name || "";
-      patientId.value = p.id || "";
-      patientPhone.value = p.phone || "";
-      patientAllergy.value = p.allergy || "";
-    }
+  /* -------------------- Export -------------------- */
+  function exportData() {
+    const payload = {
+      profile: JSON.parse(localStorage.getItem(STORAGE_KEY_PROFILE) || "{}"),
+      records,
+      exportedAt: new Date().toISOString(),
+    };
 
-    function addRecord() {
-      const rec = {
-        id: Date.now(),
-        date: visitDate.value,
-        diagnosis: diagnosis.value.trim(),
-        doctor: doctor.value.trim(),
-        meds: medications.value.trim(),
-        notes: notes.value.trim()
-      };
-
-      if (!rec.date || !rec.diagnosis) {
-        alert("กรุณากรอกวันที่และการวินิจฉัย");
-        return;
-      }
-
-      records.push(rec);
-      saveRecords();
-      render();
-      visitDate.value = diagnosis.value = doctor.value = medications.value = notes.value = "";
-    }
-
-    function saveRecords() {
-      localStorage.setItem(KEY, JSON.stringify(records));
-    }
-
-    function loadRecords() {
-      const raw = localStorage.getItem(KEY);
-      records = raw ? JSON.parse(raw) : [];
-      render();
-    }
-
-    function render() {
-      const body = document.querySelector("#recordsTable tbody");
-      body.innerHTML = "";
-
-      if (records.length === 0) {
-        empty.style.display = "block";
-        return;
-      } else empty.style.display = "none";
-
-      records.forEach(r => {
-        const tr = document.createElement("tr");
-
-        tr.innerHTML = `
-          <td>${r.date}</td>
-          <td>${r.diagnosis}</td>
-          <td>${r.doctor || "-"}</td>
-          <td>${r.meds || "-"}</td>
-          <td>${r.notes || "-"}</td>
-          <td><button class="btn danger" style="padding:4px 10px;font-size:0.8rem;" onclick="del(${r.id})">ลบ</button></td>
-        `;
-
-        body.appendChild(tr);
-      });
-    }
-
-    function del(id) {
-      records = records.filter(r => r.id !== id);
-      saveRecords();
-      render();
-    }
-
-    function clearAll() {
-      if (!confirm("ต้องการลบทั้งหมด?")) return;
-      records = [];
-      saveRecords();
-      render();
-    }
-  </script>
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "medical_history_paolo.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+</script>
 
 </body>
-</html>
+  </html>
